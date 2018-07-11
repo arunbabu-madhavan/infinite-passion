@@ -1,0 +1,8 @@
+<div class="container">
+  <div *ngFor="let questionnaire of questionnaires">
+    <a class="quick-btn" [routerLink]="['./../questionnaire', questionnaire.Id ]">
+        <span>{{questionnaire.Name}}</span>
+        <span class="label">{{questionnaire.QuestionCount}}</span>
+    </a>
+  </div>
+</div>

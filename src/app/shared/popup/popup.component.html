@@ -1,0 +1,10 @@
+
+<div data-pop="slide-down" id="popup" [class.show]="open" [style.width.px]="width" [style.height.px]="height" >
+  <div class="popupcontrols">
+      <span id="popupclose" (click)="closeButtonClicked()">&times;</span>
+  </div>
+  <div class="popupcontent">
+    <ng-content></ng-content>
+  </div>
+</div>
+<div id="overlay"  [class.show]="open"></div>  

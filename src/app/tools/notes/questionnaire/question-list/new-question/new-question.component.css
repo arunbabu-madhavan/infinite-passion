@@ -1,0 +1,44 @@
+nav{
+    margin-bottom: 10px;
+    padding:15px;
+    background: #3f51b5;
+    color: #fff;
+}
+
+.popup-container{
+    padding: 10px;
+    display: flex;
+    flex-direction: column
+}
+.popup-container > div{
+  margin-bottom: 15px;
+  width: 100%;
+}
+.popup-container > div:last-child{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+input,textarea{
+    margin-top: 10px;
+}
+input[type='text']{
+    width: 100%;
+    padding: 12px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+    box-sizing: border-box;
+    resize: none;
+}
+
+textarea{
+    width: 100%;
+    padding: 12px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+}

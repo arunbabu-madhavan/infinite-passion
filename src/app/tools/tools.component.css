@@ -1,0 +1,30 @@
+
+.container > div {
+    float: left;
+    width: 25%;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    cursor: pointer;
+}
+.qa-link-wrapper {
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+    margin-bottom: 50px;
+    background-color: #B9B739;
+}
+.dashboard-icon {
+height: 75px;
+width: 75px;
+border: 2px solid #fff;
+padding: 20px;
+border-radius: 50%;
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+font-size: 30px;
+margin-bottom: 20px;
+color: #fff;
+}

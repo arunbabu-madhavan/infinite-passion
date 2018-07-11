@@ -1,0 +1,27 @@
+<div class="container">
+<div class="button-container">
+<div>
+  <transitional-buttons [type]="2" [width]="92" (ButtonClicked)="toggle($event)" [ButtonText]="expandBtnText"></transitional-buttons></div>
+</div>
+<div class="question-list-container">
+  <div *ngFor="let question of questionList">
+    <div class="question">
+      <span [class.expand]="question.showAnswer" (click)="question.showAnswer = !question.showAnswer; question.answerEdit = false"></span>
+      <span *ngIf="!question.edit"><a (dblclick)="question.edit = true; question.showAnswer = true">{{question.QuestionText}}</a></span>
+      <span *ngIf="question.edit"><input type="text" [(ngModel)]="question.QuestionText"></span>
+      <span *ngIf="question.edit" (click)="question.edit = false;save(question)"><i class="fa fa-check-circle" ></i></span>
+    </div>
+    <div class="answer" *ngIf="question.showAnswer"  [@fadeInOut]>
+        <span (dblclick)="question.answerEdit = true" *ngIf="!question.answerEdit" >{{question.AnswerText}}</span>
+        <div class='editor' *ngIf="question.answerEdit">
+          <textarea  rows="7" cols="120" [(ngModel)]="question.AnswerText"></textarea>
+          <i class="fa fa-check-circle" (click)="question.answerEdit = false;save(question)"></i>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="button-container">
+  <transitional-buttons [type]="1" [width]="150" (ButtonClicked)="addNewPopup = true" [ButtonText]="addButtonText"></transitional-buttons>
+</div>
+</div>
+<popup  [height]="450" [open]="addNewPopup" (onClose)="addNewPopup = false"><new-question (QuestionAdded)="refresh()" [success]="!addNewPopup" [CategoryId]="categoryId"></new-question></popup>

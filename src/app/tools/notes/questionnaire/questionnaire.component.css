@@ -1,0 +1,39 @@
+.quick-btn {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 80px;
+    padding-top: 16px;
+    margin: 10px;
+    color: #444444;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+    -webkit-box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC;
+    box-shadow: 0 0 0 1px #F8F8F8 inset, 0 0 0 1px #CCCCCC;
+}
+.container >div{
+    float: left;
+}
+
+.quick-btn span {
+    display: block;
+}
+.quick-btn .label {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    background-color: skyblue;
+}

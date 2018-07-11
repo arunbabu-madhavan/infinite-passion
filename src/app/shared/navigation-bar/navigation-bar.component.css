@@ -1,0 +1,197 @@
+.expand{
+    position: fixed;
+    z-index: 3;
+    top:60px;
+    left:5%;
+    height: 60px;
+    width: 60px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+nav{
+    position: fixed;
+    z-index: 2;
+    top:60px;
+    left:5%;
+    cursor: pointer;
+    font-size: 14px;
+}
+.nav-bg {
+    position: absolute;
+    z-index: 1;
+    top:0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background: darkslategray;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    transition: height 0.2s, box-shadow 0.2s;
+}
+input[type=checkbox].expand:checked ~ nav .nav-bg{
+    height: 105%;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.2);
+}
+input[type=checkbox].expand:checked ~ nav .menu-trigger span{
+    background-color: transparent
+}
+.menu-trigger{
+    position: absolute;
+    z-index: 3;
+    top:0;
+    left:0;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.menu-trigger span,.menu-trigger span::after ,.menu-trigger span::before{
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #fff;
+}
+.menu-trigger span{
+    left:50%;
+    top:50%;
+    bottom: auto;
+    right: auto;
+    transform: translate(-50%,-50%);
+    transition: background-color 0.2s;
+}
+.menu-trigger span::after,.menu-trigger span::before{
+    content: '';
+    top: 0;
+    left: 0;
+    transition: transform 0.2s;
+}
+.menu-trigger span::after{
+    transform: translateY(6px);
+}
+.menu-trigger span::before{
+    transform: translateY(-6px);
+}
+input[type=checkbox].expand:checked ~ nav .menu-trigger span::after{
+    transform: rotate(45deg);
+}
+input[type=checkbox].expand:checked ~ nav .menu-trigger span::before{
+    transform: rotate(-45deg);
+}
+nav ul{
+    position: relative;
+    z-index: 2;
+    padding-top: 60px;
+    visibility: hidden;
+    transition: visibility 0.2s;
+}
+nav ul a{
+    position: relative;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    padding-left:69px;
+    color:slategrey;
+    transition: color 0.2s;
+}
+nav ul a > i{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 22px;
+    transform: translateY(-50%) scale(0);
+    opacity: .6;
+}
+nav ul a.active span{
+    margin-left: -12px;
+}
+nav ul a span{
+    margin-left: 6px;
+}
+nav ul a.active span::before{
+    content: '';
+    /* position: absolute; */
+    width: 1.5px;
+    height: 16.5px;
+    border-left: solid 3px;
+    border-right: solid 14px;
+    transform: translateX(3px) translateY(-50%) scaleY(0);
+    border-color:rgba(120, 226, 147, 2);
+    border-right-color: transparent;
+}
+nav ul span{
+    display: block;
+    opacity: 0;
+    transform: translateX(-25px);
+}
+input[type=checkbox].expand:checked ~ nav  ul{
+    visibility: visible;
+}
+input[type=checkbox].expand:checked ~ nav  ul a > i{
+    transform: translateY(-50%) scale(1);
+    animation: scaleIn 0.15s backwards;
+    transition: opacity 0.2s;
+}
+
+nav ul a > i{
+    color: white;
+    font-size: 16.5px;
+}
+
+input[type=checkbox].expand:checked ~ nav  ul a.active{
+    font-weight: bold;
+}
+input[type=checkbox].expand:checked ~ nav  ul a.active > i{
+    opacity: 1;
+}
+input[type=checkbox].expand:checked ~ nav  ul a.active::after{
+    transform: translateX(3px) translateY(-50%) scaleY(1);
+    transition: transform 0.15s 0.3s;
+}
+input[type=checkbox].expand:checked ~ nav  ul span{
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform 0.2s;
+    animation: slideIn 0.15s backwards;
+}
+
+input[type=checkbox].expand:checked ~ nav  ul li:first-of-type a > i,
+input[type=checkbox].expand:checked ~ nav  ul li:first-of-type span{
+animation-delay: 0.05s;
+}
+input[type=checkbox].expand:checked ~ nav  ul li:nth-of-type(1) a > i,
+input[type=checkbox].expand:checked ~ nav  ul li:nth-of-type(1) span{
+animation-delay: 0.10s;
+}
+input[type=checkbox].expand:checked ~ nav  ul li:nth-of-type(2) a > i,
+input[type=checkbox].expand:checked ~ nav  ul li:nth-of-type(2) span{
+animation-delay: 0.15s;
+}
+input[type=checkbox].expand:checked ~ nav  ul li:nth-of-type(3) a > i,
+input[type=checkbox].expand:checked ~ nav  ul li:nth-of-type(3) span{
+animation-delay: 0.20s;
+}
+input[type=checkbox].expand:checked ~ nav  ul li:nth-of-type(4) a > i,
+input[type=checkbox].expand:checked ~ nav  ul li:nth-of-type(4) span{
+animation-delay: 0.25s;
+}
+@keyframes scaleIn {
+    from {
+      transform: translateY(-50%) scale(0);
+    }
+    to {
+      transform: translateY(-50%) scale(1);
+    }
+  }
+@keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-25px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }

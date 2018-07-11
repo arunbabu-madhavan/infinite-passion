@@ -1,0 +1,39 @@
+<input type="checkbox" class="expand" [(ngModel)]='expand'>
+<nav (click)=close()>
+  <a class="menu-trigger">
+    <span></span>
+  </a>
+<ul>
+  <li>
+      <a [routerLink]="['/home']" [routerLinkActive]="['active']">
+        <i class="fa fa-home"></i> 
+        <span>Home</span>
+      </a>
+  </li>
+  <li>
+      <a [routerLink]="['/tools']"  [routerLinkActive]="['active']">
+          <i class="fa fa-wrench"></i>
+          <span>Tools</span>
+      </a>
+  </li>
+  <li>
+      <a [routerLink]="['/gallery']"  [routerLinkActive]="['active']">
+        <i class="fa fa-image"></i>
+        <span>Gallery</span>
+      </a>
+  </li>
+  <li>
+      <a [routerLink]="['/games']"  [routerLinkActive]="['active']">
+          <i class="fa fa-gamepad"></i>
+          <span>Games</span>
+      </a>
+  </li>
+  <li>
+      <a [routerLink]="['/contact']"  [routerLinkActive]="['active']">
+          <i class="fa fa-at"></i>
+          <span>Contact</span>
+      </a>
+  </li>
+</ul>
+  <span class="nav-bg"></span>
+</nav>  

@@ -1,0 +1,15 @@
+<nav>Add New Question</nav>
+<div class="popup-container">
+    <div><h4>Question:</h4>
+    
+      <input name="question" type="text" width="450" [(ngModel)]="model.QuestionText">
+      </div>
+      <div>
+          <h4>Answer:</h4>
+          <textarea name="answer" placeholder="Your answer.." [(ngModel)]="model.AnswerText" style="height:200px"></textarea>
+
+      </div>
+<div>
+    <loading-submit-button [ButtonText]="btnSubmitTxt" (ButtonClicked)="save()" [IsLoading]="saving" [Submitted]="success"></loading-submit-button>
+  </div>
+</div>

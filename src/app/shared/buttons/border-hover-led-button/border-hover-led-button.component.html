@@ -1,0 +1,9 @@
+
+<div class="svg-wrapper" [style.width.px]="width" >
+  <svg height="40" [routerLink]="routerLink" [attr.width]="width" xmlns="http://www.w3.org/2000/svg">
+    <rect id="shape" height="40" [attr.width]="width" [style.stroke-dashoffset]="dashOffset"></rect>
+    </svg><div id="text">
+      <a (click)="OnClick()"><span class="spot"></span>{{ButtonText}}</a>
+    </div>
+  
+</div>
